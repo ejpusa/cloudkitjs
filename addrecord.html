@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CloudKit Test</title>
+    <link rel="stylesheet" href="css/cloudkit-catalog.css">
+</head>
+<body>
+
+    <script>
+        /*
+         * Initialize the global objects we will need.
+         */
+        if(typeof CKCatalog === 'undefined') {
+            CKCatalog = {};
+        }
+
+        if(typeof CKCatalog.tabs === 'undefined') {
+            CKCatalog.tabs = {
+                'readme': [{}],
+                'not-found': [{}]
+            };
+        }
+   </script>
+
+    <div id="apple-sign-in-button"></div>
+    <div id="apple-sign-out-button"></div><br>
+    <span id="username"></span><br><br>
+
+   <form>
+        Place Name: <input type="text" name="placeName" id="placeName">
+        Category: <input type="text" name="category" id="category">
+        Address: <input type="text" name="address" id="address">
+        City: <input type="text" name="city" id="city"><br><br>
+        State: <input type="text" name="state" id="state">
+        Zip Code: <input type="text" name="zipCode" id="zipCode">
+        Country: <input type="text" name="country" id="country">
+        Days + Hours: <input type="text" name="daysAndHours" id="daysAndHours"><br><br>
+        Contact: <input type="text" name="contact" id="contact">
+        Phone: <input type="text" name="phone" id="phone">
+        Email: <input type="text" name="email" id="email">
+        Site: <input type="text" name="site" id="site"><br><br>
+        Facebook: <input type="text" name="facebook" id="facebook">
+        Twitter: <input type="text" name="twitter" id="twitter">
+        Instagram: <input type="text" name="instagram" id="instagram">
+        Notes: <input type="text" name="notes" id="notes">
+
+        <input type="submit" value="Submit" onclick="saveRecord(this.form.placeName.value,this.form.category.value,this.form.address.value,this.form.city.value,this.form.state.value,this.form.zipCode.value,this.form.country.value,this.form.daysAndHours.value, this.form.contact.value, this.form.phone.value, this.form.email.value,this.form.site.value, this.form.facebook.value, this.form.twitter.value, this.form.instagram.value, this.form.notes.value)">
+
+    </form>
+ 
+  <script src="js/init.js"></script>
+  <script src="js/cloudkit-code-samples/authentication.js"></script>
+  <script src="js/cloudkit-code-samples/add-record.js"></script>
+    
+    <script>
+        window.addEventListener('cloudkitloaded',CKCatalog.init);
+    </script>
+    <script async src="https://cdn.apple-cloudkit.com/ck/1/cloudkit.js"></script>
+
+</body>
+</html>
+
